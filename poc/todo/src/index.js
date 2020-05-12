@@ -1,12 +1,12 @@
 import React from 'react';
+import App from "./app"
+// import  browser
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-
+// emulate import=> nodejs
+// const react-dom=require("react-dom");
 ReactDOM.render(
-
-    <App />
-,
+  <App></App>
+  ,
   document.getElementById('root')
 );
 

@@ -23,6 +23,13 @@
 ### React Link
 * Best video for  getting started with react: https://www.youtube.com/watch?v=SAIdyBFHfVU&t=1992s 
 * Finish main concept from here : https://reactjs.org/docs/getting-started.html
+* https://overreacted.io/why-do-we-write-super-props/
 ### Inside React 
 * https://reactjs.org/docs/reconciliation.html
 * https://github.com/acdlite/react-fiber-architecture
+
+<!-- npm init -y -->
+<!-- npm install create-react-app -->
+<!-- npx create-react-app todo -->
+<!-- cd todo -->
+<!-- npm start -->

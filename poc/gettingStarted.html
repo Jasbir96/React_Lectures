@@ -20,6 +20,8 @@
   <script type="text/babel">
     //  capital letter 
     // react will create an element
+    // they donot have there own state
+    
     function Hello(props) {
       // JSX// name,age
       return <h1>Hello {props.name} are you {props.age} old</h1>
@@ -27,11 +29,11 @@
     // <h1>Hello </h1>
     // JSX
     function HelloAll(prop) {
-      console.log(prop.myprop);
+      // console.log(prop.myprop);
       return (
         // 3.
         <React.Fragment>
-          <Hello name="Jasbir" age="23" myprop={prop.myprop}></Hello>
+          <Hello name="Jasbir" age="23" ></Hello>
           <Hello name="Rohan" age="24"></Hello>
           <Hello name="Raghav" age="23"></Hello>
           <Hello name="Kapil" age="26"></Hello>
@@ -39,9 +41,7 @@
         </React.Fragment>
       )
     }
-    function HelloWorld() {
-      return <HelloAll myprop="hello from hw"></HelloAll>
-    }
+   
     // 4. 
     ReactDOM.render(<HelloAll></HelloAll>, document.getElementById("root"));
 
