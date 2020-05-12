@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!-- react actual algorithm -->
+  <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+  <!-- Dom manipulation -->
+  <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+  <!-- JSX syntax => JS  -->
+  <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+
+<body>
+  <div class="container ml-auto">
+    <div id="root"></div>
+  </div>
+  <!--  class based components =>only  class based components could acess-->
+  <script type="text/babel">
+    class Counter extends React.Component {
+      // constructor
+      constructor() {
+        // react 
+        // parent constructor 
+        super();
+        // predefined
+        // things that would changed during app lifecycle 
+        this.state = {
+          count: 1
+        }
+      }
+      increment = () => {
+        this.setState({ count: this.state.count + 1 });
+      }
+      decrement = () => {
+        this.setState({ count: this.state.count - 1 });
+      }
+      // react
+      // <!-- whenever state is changed react re-renders the component using the updated state -->
+      render() {
+        return (
+          // predefined
+          // thinking of intial state you need to write actual code that will use the state 
+          <React.Fragment>
+            <p>{this.state.count}</p>
+            <button className="btn btn-primary" onClick={this.increment} >+</button>
+            <button className="btn btn-danger" onClick={this.decrement}>-</button>
+          </React.Fragment>
+        )
+      }
+    }
+    // react dom
+    function Counters(){
+      return (
+        <React.Fragment>
+          <Counter></Counter>
+          <Counter></Counter>
+          <Counter></Counter>
+          <Counter></Counter>
+          </React.Fragment>
+      )
+    }
+    ReactDOM.render(<Counters></Counters>, document.getElementById("root"));
+  </script>
+</body>
+
+</html>

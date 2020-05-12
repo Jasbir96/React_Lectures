@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!-- react actual algorithm -->
+  <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+  <!-- Dom manipulation -->
+  <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+  <!-- JSX syntax => JS  -->
+  <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+</head>
+
+<body>
+  <!-- 1 -->
+  <div id="root"></div>
+  <!-- 2 -->
+  <script type="text/babel">
+    //  capital letter 
+    // react will create an element
+    function Hello(props) {
+      // JSX// name,age
+      return <h1>Hello {props.name} are you {props.age} old</h1>
+    }
+    // <h1>Hello </h1>
+    // JSX
+    function HelloAll(prop) {
+      console.log(prop.myprop);
+      return (
+        // 3.
+        <React.Fragment>
+          <Hello name="Jasbir" age="23" myprop={prop.myprop}></Hello>
+          <Hello name="Rohan" age="24"></Hello>
+          <Hello name="Raghav" age="23"></Hello>
+          <Hello name="Kapil" age="26"></Hello>
+          <Hello name="Krishna" age="27"></Hello>
+        </React.Fragment>
+      )
+    }
+    function HelloWorld() {
+      return <HelloAll myprop="hello from hw"></HelloAll>
+    }
+    // 4. 
+    ReactDOM.render(<HelloAll></HelloAll>, document.getElementById("root"));
+
+  </script>
+</body>
+
+</html>
