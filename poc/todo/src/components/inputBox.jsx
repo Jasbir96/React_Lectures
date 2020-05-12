@@ -28,5 +28,5 @@ this.setState({
      );
   }
 }
- 
+
 export default InputBox;
