@@ -1,9 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from "./app"
+import MoviesPage from "./homePage"
+
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <MoviesPage/>
   </React.StrictMode>,
   document.getElementById('root')
 );

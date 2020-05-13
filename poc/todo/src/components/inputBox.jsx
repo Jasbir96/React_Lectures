@@ -10,6 +10,7 @@ class InputBox extends Component {
   }
 
   changeText=(e)=>{
+    // input => value 
 const value=e.currentTarget.value;
 this.setState({
   data:value

@@ -10,12 +10,11 @@ class App extends Component {
    taskList:[{task:"Make Coffee",id:1},{task:"Learn ES6",id:2},{task:"Learn React",id:3}]
  }
  handleDelete=(todeleteTask)=>{
-// console.log(task);
-// state change => current task => doesnot exist
 function test(elem){
     return elem.task!==todeleteTask;
 }
-let restOfTheTasks=this.state.taskList.filter(test)
+let restOfTheTasks=this.state.taskList.filter(test);\
+// new state => click -> filtered out 
 this.setState({taskList:restOfTheTasks});
  }
  handleAddTask=(toAddTask)=>{
@@ -33,6 +32,7 @@ this.setState({taskList:taskList})
         <InputBox 
         handleAddtoIBC={this.handleAddTask}
         ></InputBox>
+    
      <TaskList
      taskList={this.state.taskList} handleDeletetoTlC={this.handleDelete} ></TaskList>
      </React.Fragment>
