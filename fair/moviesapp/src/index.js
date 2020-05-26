@@ -1,11 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import MoviesPage from "./homePage"
-
+// import MoviesPage from "./homePage"
+import App from "./app";
+import { BrowserRouter } from "react-router-dom";
 ReactDOM.render(
-  <React.StrictMode>
-    <MoviesPage/>
-  </React.StrictMode>,
+  <BrowserRouter>
+    <App></App>
+  </BrowserRouter>,
   document.getElementById('root')
 );
 
