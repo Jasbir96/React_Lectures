@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { getMovies } from "./db/fakeMovieService";
-import { getGenres } from "./db/fakeGenreService";
+import axios from "axios";
 class MoviesPage extends Component {
   state = {
     movies: getMovies(),
@@ -36,21 +36,25 @@ class MoviesPage extends Component {
   }
   // life cycle methods
   componentDidMount() {
-    // 
     // /request 
     // genres update 
     // array destructuring
     // console.log(getGenres());
     // console.log(...getGenres());
-    let NewGArray = [...this.state.genres, ...getGenres()];
-    // console.log(NewGArray);
-    this.setState({
-      genres: NewGArray
-    })
+    let resP = axios.get("/getGenres");
+    resP.then( (res)=>  {
+      console.log(res.data);
+      let NewGArray = [...this.state.genres, ...res.data.genres];
+      // console.log(NewGArray);
+      this.setState({
+        genres: NewGArray
+      })
+    });
+
 
 
   }
-  
+
   render() {
     let { movies, searchQuery, currentPage, limit, genres } = this.state;
     if (searchQuery) {

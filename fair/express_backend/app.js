@@ -9,10 +9,14 @@ const { getMovies } = require("./db/fakeMovieService");
 // import { getMovies } from "./db/fakeMovieService";
 app.get("/getGenres", function (req, res) {
     let genres = getGenres();
-    res.status(200).json({
-        genres
-    })
+    setTimeout(function () {
+        res.status(200).json({
+            genres
+        })
+    }, 3000);
+
 })
+
 app.get("/getMovies", function (req, res) {
     let movies = getMovies();
     res.status(200).json({
